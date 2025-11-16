@@ -23,4 +23,17 @@ int main(void){
         int rahasia = (rand() %10) + 1;
         int limit = 3;
         int status = tebak(rahasia, 1, limit);
- }
+            printf("\n Ingin Bermain Lagi?\n");
+            printf("jawab(y/n):");
+            scanf("%c", &ans[0];
+
+            if(ans[0] == 'y' || ans[0] == 'y'){
+                stat = 1;
+            }else{
+                stat = 0;
+                printf("\n\t===Terima Kasih Sudah Bermain===\t\n");
+            }
+    return 0;
+    
+    }
+
