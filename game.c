@@ -16,7 +16,7 @@ int main(void){
     printf("\n========================================================\n");
     srand(time(NULL));
 
-    printf("\n kami sudah memiliki angka rahasia!");
+    printf("\nkami sudah memiliki angka rahasia!");
     printf("kamu punya %d percobaan!\n", limit);
 
     while(stat){
@@ -33,22 +33,35 @@ int main(void){
                 stat = 0;
                 printf("\n\t===Terima Kasih Sudah Bermain===\t\n");
             }
-    return 0;
     }
+    return 0;
+}
 
-    int tebak (int rhs, int percobaan, int limit){
-        int angka;
+int tebak (int rhs, int percobaan, int limit){
+    int angka;
 
-        printf("\npercobaan %d dari %d", percobaan, limit);
-        printf("\n======Silahkan Tebak Angka 1-10!=====\n");
-        scanf(" %d", &angka);
+    printf("\npercobaan %d dari %d", percobaan, limit);
+    printf("\n======Silahkan Tebak Angka 1-10!=====\n");
+    scanf(" %d", &angka);
 
-        if(angka > rhs){
-           printf("\n\tAngka %d Terlalu Besar! Coba lagi!\n", angka);
-               if(percobaan == limit){
-                  printf("\n\t===\tGAME OVER\t===\t\n");
-                  printf("jawaban yang benar: %d\n",rhs);
-                  return 0;    
+    if(angka > rhs){
+        printf("\n\tAngka %d Terlalu Besar! Coba lagi!\n", angka);
+            if(percobaan == limit){
+                printf("\n\t===\tGAME OVER\t===\t\n");
+                printf("jawaban yang benar: %d\n",rhs);
+                return 0;    
                }
-        
-
+        return tebak(rhs, percobaan + 1, limit);
+    }else if(angka < rhs) {
+        printf("\n\tAngka %d terlalu  kecil! Coba lagi!\n", angka);
+            if(percobaan == limit){
+                printf("\n\t===\tGAME OVER\t===\t\n");
+                printf("jawaban yang benar: %d\n",rhs);
+                return 0;    
+               }
+        return tebak(rhs, percobaan + 1, limit);
+    }else if(angka == rhs) {
+        printf("\t\t Selamat!! Angka %d Tebakan Anda Benar!!\n", angka);
+    }
+        return 1;
+}
