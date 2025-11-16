@@ -34,6 +34,21 @@ int main(void){
                 printf("\n\t===Terima Kasih Sudah Bermain===\t\n");
             }
     return 0;
-    
     }
+
+    int tebak (int rhs, int percobaan, int limit){
+        int angka;
+
+        printf("\npercobaan %d dari %d", percobaan, limit);
+        printf("\n======Silahkan Tebak Angka 1-10!=====\n");
+        scanf(" %d", &angka);
+
+        if(angka > rhs){
+           printf("\n\tAngka %d Terlalu Besar! Coba lagi!\n", angka);
+               if(percobaan == limit){
+                  printf("\n\t===\tGAME OVER\t===\t\n");
+                  printf("jawaban yang benar: %d\n",rhs);
+                  return 0;    
+               }
+        
 
